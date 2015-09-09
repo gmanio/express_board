@@ -1,7 +1,6 @@
 {
   "name": "express_board",
   "version": "0.0.0",
-  "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
