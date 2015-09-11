@@ -1,4 +1,4 @@
-var mysql      = require('mysql');
+var mysql = require('mysql');
 var db = mysql.createConnection({
     host     : 'go.gman.io',
     user     : 'root',
