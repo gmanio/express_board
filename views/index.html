@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>test</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
+    <h1></h1>
     tester
-    <p>Welcome to <%= title %></p>
+    <p>Welcome to</p>
     <pre>
-      <%=JSON.stringify(title)%>
+      <%data.forEach(function(item, index){%>
+        <div><%=item.log%></div>
+      <%})%>
     </pre>
-    <img src="/img/5k_3.jpg">
-    <img src="/img/5k_2.jpg">
+    <!--<img src="/img/5k_3.jpg">-->
+    <!--<img src="/img/5k_2.jpg">-->
   </body>
 </html>
 
