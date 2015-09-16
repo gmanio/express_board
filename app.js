@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
@@ -22,6 +22,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 50000 }}))
+
+app.use(function(req, res, next) {
+  var sess = req.session;
+  if(sess.view){
+    console.log('session Auth');
+    next();
+  }else{
+    sess.view = 1;
+    next();
+  }
+});
 
 app.use('/', routes);
 app.use('/users', users);

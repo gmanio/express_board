@@ -5,7 +5,6 @@ var db = require('./db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
   var dbResult;
 
   db.query('SELECT * FROM t_log', function(err, rows, fields) {
